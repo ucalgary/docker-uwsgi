@@ -12,7 +12,7 @@ RUN	log () { echo -e "\033[01;95m$@\033[0m"; } && \
 		pcre-dev && \
 
 	apk add --no-cache --virtual .run-deps \
-		libpcre32 && \
+		pcre && \
 
 	log "Temporarily link cc1 to gcc for uwsgi build" && \
 	ln -s /usr/bin/gcc /usr/bin/cc1 && \
