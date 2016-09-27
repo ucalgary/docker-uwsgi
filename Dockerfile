@@ -8,14 +8,18 @@ RUN	log () { echo -e "\033[01;95m$@\033[0m"; } && \
 		gcc \
 		linux-headers \
 		make \
-		musl-dev && \
+		musl-dev \
+		pcre-dev && \
+
+	apk add --no-cache --virtual .run-deps \
+		libpcre32 && \
 
 	log "Temporarily link cc1 to gcc for uwsgi build" && \
 	ln -s /usr/bin/gcc /usr/bin/cc1 && \
 
 	BUILD_DIR="$(mktemp -d)" && \
 	UWSGI_VERSION=2.0.13.1 && \
-	
+
 	log "Download and unpack uwsgi-$UWSGI_VERSION.tar.gz" && \
 	wget -O "$BUILD_DIR/uwsgi.tar.gz" "http://projects.unbit.it/downloads/uwsgi-$UWSGI_VERSION.tar.gz" && \
 	tar -xvzC $BUILD_DIR -f "$BUILD_DIR/uwsgi.tar.gz" && \
