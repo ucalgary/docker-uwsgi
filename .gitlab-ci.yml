@@ -6,7 +6,7 @@ stages:
   - release
 
 variables:
-  KAFKA_VERSION: '2.0.13.1'
+  UWSGI_VERSION: '2.0.13.1'
   UWSGI_VERSION_MAJOR: '2'
   UWSGI_VERSION_MINOR: '0'
   UWSGI_VERSION_PATCH: '13'
