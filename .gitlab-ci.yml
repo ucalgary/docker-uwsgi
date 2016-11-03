@@ -37,4 +37,3 @@ release:
     - docker push $CI_REGISTRY_IMAGE:latest
   only:
     - master
-  when: manual
