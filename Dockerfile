@@ -1,7 +1,5 @@
 FROM python:3.6.0-alpine
 
-MAINTAINER King Chung Huang <kchuang@ucalgary.ca>
-
 RUN	log () { echo -e "\033[01;95m$@\033[0m"; } && \
 
 	apk add --no-cache --virtual .build-deps \
@@ -43,3 +41,5 @@ WORKDIR /usr/src
 EXPOSE 9000 9002
 
 CMD ["uwsgi", "/usr/src/app/uwsgi.ini"]
+
+LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>"
