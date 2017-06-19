@@ -1,4 +1,4 @@
-FROM python:3.6.0-alpine
+FROM python:3.6.1-alpine
 
 RUN	log () { echo -e "\033[01;95m$@\033[0m"; } && \
 \
