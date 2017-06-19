@@ -22,7 +22,7 @@ RUN	log () { echo -e "\033[01;95m$@\033[0m"; } && \
 	wget -O "$BUILD_DIR/uwsgi.tar.gz" "http://projects.unbit.it/downloads/uwsgi-$UWSGI_VERSION.tar.gz" && \
 	tar -xvzC $BUILD_DIR -f "$BUILD_DIR/uwsgi.tar.gz" && \
 \
-	log "Build and install uwsgi-$UWSVI_VERSION" && \
+	log "Build and install uwsgi-$UWSGI_VERSION" && \
 	cd $BUILD_DIR/uwsgi-$UWSGI_VERSION && \
 	python uwsgiconfig.py --build default && \
 	python setup.py install && \
